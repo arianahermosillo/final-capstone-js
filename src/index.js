@@ -64,14 +64,14 @@ function setDelay(difficulty) {
  * chooseHole(holes) //> returns one of the 9 holes that you defined
  */
 function chooseHole(holes) {
-  const index = Math.floor(Math.random() * 9);
+  const index = Math.floor(Math.random() *9);
   const hole = holes[index];
   if (hole === lastHole) {
     return chooseHole(holes);
   }
   lastHole = hole;
   return hole;
-}// TODO: Write your code here.
+} // TODO: Write your code here.
 
 
 /**
@@ -162,7 +162,6 @@ function toggleVisibility(hole){
 function updateScore() {
   points++;
   score.textContent = points; // TODO: Write your code here
-
   return points;
 }
 
@@ -188,10 +187,8 @@ function updateTimer() {
   if (time > 0){
     time -= 1;
     timerDisplay.textContent = time; 
-  } else {
-    stopGame();// TODO: Write your code here.
-  }
   return time;
+  }
 }
 
 /**
@@ -200,11 +197,11 @@ function updateTimer() {
 * the updateTimer function get called. This function is already implemented
 *
 */
-function startTimer() {
-  timer = setInterval(updateTimer, 1000); // TODO: Write your code here
+function startTimer(click) {
+  timer = setInterval(updateTimer,1000); // TODO: Write your code here
   return timer;
 }
-
+setEventListeners()
 /**
 *
 * This is the event handler that gets called when a player
@@ -215,7 +212,7 @@ function startTimer() {
 */
 function whack(event) {
   updateScore(); 
-  return points; // TODO: Write your code here.
+  return points;// TODO: Write your code here.I changed it had return points;
 }
 
 /**
@@ -230,6 +227,7 @@ function setEventListeners(){
 
   return moles;
 }
+setEventListeners();
 
 /**
 *
@@ -286,4 +284,4 @@ window.whack = whack;
 window.time = time;
 window.setDuration = setDuration;
 window.toggleVisibility = toggleVisibility;
-  window.setEventListeners = setEventListeners;
+window.setEventListeners = setEventListeners;
